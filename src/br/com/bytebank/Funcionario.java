@@ -1,6 +1,6 @@
 package br.com.bytebank;
 
-public class Funcionario {
+public abstract class Funcionario {
 	
 	private String nome;
 	private String cpf;
@@ -10,10 +10,7 @@ public class Funcionario {
 		
 	}
 	
-	public double getBonificacao() {
-		System.out.println("Bonificação do funcionario...");
-		return this.salario * 0.05;
-	}
+	public abstract double getBonificacao();
 	
 	public String getNome() {
 		return nome;
