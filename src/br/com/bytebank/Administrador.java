@@ -1,15 +1,14 @@
 package br.com.bytebank;
 
-public class Gerente extends Funcionario implements Autenticavel{
+public class Administrador extends Funcionario implements Autenticavel {
 
 	private int senha;
 
 	@Override
 	public double getBonificacao() {
-		System.out.println("Bonificação do gerente...");
-		return getSalario();
+		return 50;
 	}
-	
+
 	@Override
 	public void setSenha(int senha) {
 		this.senha = senha;	
@@ -20,6 +19,5 @@ public class Gerente extends Funcionario implements Autenticavel{
 		if (this.senha == senha)
 			return true;
 		return false;
-	}	
-
+	}
 }
