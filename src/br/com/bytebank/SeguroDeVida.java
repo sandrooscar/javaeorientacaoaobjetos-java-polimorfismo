@@ -1,0 +1,10 @@
+package br.com.bytebank;
+
+public class SeguroDeVida implements Tributavel {
+
+	@Override
+	public double getValorImposto() {
+		return 42.0;
+	}
+
+}
