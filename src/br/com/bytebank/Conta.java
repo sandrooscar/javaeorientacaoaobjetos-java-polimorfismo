@@ -15,11 +15,13 @@ public class Conta {
 	}
 	
 	public void deposita(double valor) {
+		System.out.println("Depositando " + valor + " na conta " + this.agencia + "/" + this.numero);
 		this.saldo += valor;
 	}
 
 	public boolean saca(double valor) { 
 		if (this.saldo >= valor) {
+			System.out.println("Sacando " + valor + " na conta " + this.agencia + "/" + this.numero);
 			this.saldo -= valor;
 			return true;
 		}
