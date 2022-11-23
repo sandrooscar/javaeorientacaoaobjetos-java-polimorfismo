@@ -19,20 +19,19 @@ public class Conta {
 		this.saldo += valor;
 	}
 
-	public boolean saca(double valor) { 
-		if (this.saldo >= valor) {
-			System.out.println("Sacando " + valor + " na conta " + this.agencia + "/" + this.numero);
-			this.saldo -= valor;
-			return true;
-		}
-		return false;
+	public void saca(double valor) { 
+
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException("Saldo insuficiente! Saldo: " + this.saldo + ", valor: " + valor);
+		}		
+		
+		System.out.println("Sacando " + valor + " na conta " + this.agencia + "/" + this.numero);
+		this.saldo -= valor;
 	}
 	
-	public boolean transfere(double valor, Conta contaDestino) {
-		if (this.saca(valor)) {
-			contaDestino.deposita(valor);
-		}
-		return false;
+	public void transfere(double valor, Conta contaDestino) {
+		this.saca(valor)); 
+		contaDestino.deposita(valor);
 	}
 	
 	public double getSaldo() {
