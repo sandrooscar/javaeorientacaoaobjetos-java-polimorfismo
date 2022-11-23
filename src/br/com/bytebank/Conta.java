@@ -8,6 +8,14 @@ public class Conta {
 	private static int total;
 	
 	public Conta(int agencia, int numero) {
+        if(agencia < 1) {
+            throw new IllegalArgumentException("Agencia inválida");
+        }
+
+        if(numero < 1) {
+            throw new IllegalArgumentException("Numero da conta inválido");
+        }
+        
 		total++;
 		System.out.println("O total de contas é " + total);
 		this.agencia = agencia;
@@ -30,7 +38,7 @@ public class Conta {
 	}
 	
 	public void transfere(double valor, Conta contaDestino) {
-		this.saca(valor)); 
+		this.saca(valor); 
 		contaDestino.deposita(valor);
 	}
 	
